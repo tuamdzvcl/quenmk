@@ -48,6 +48,8 @@ public class MainActivity2 extends AppCompatActivity {
         //db.execSQL("CREATE TABLE tblQLSV(masv primary key ,name text,quequan text)");
         loadDanhSach();
         try {
+            db = SQLiteDatabase.openOrCreateDatabase("data/data/com.example.btlver2/QuanLySinhVien", null);
+            db.execSQL("CREATE TABLE IF NOT EXISTS tblQLSV(masv primary key ,name text,quequan text)");
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

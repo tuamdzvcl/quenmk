@@ -18,8 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     EditText edtmk, edttk;
-    TextView txter;
-    Button btndangnhap, btndangki;
+    TextView txter , txtdangki;
+    Button btndangnhap;
     SQLiteDatabase db;
 
     @Override
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private void addControler() {
         btndangnhap = findViewById(R.id.btndangnhap);
         txter = findViewById(R.id.txter);
-        btndangki = findViewById(R.id.btndangki);
+        txtdangki = findViewById(R.id.txtdangki);
         edtmk = findViewById(R.id.edtmk);
         edttk = findViewById(R.id.edttk);
 
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btndangki.setOnClickListener(new View.OnClickListener() {
+        txtdangki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dangKi(view);
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void laymk(View view) {
+    public void quenmk(View view) {
         Dialog dialog = new Dialog(MainActivity.this);
         dialog.setTitle("Lấy Lại Mật Khẩu");
         dialog.setCancelable(false);
@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnquen = dialog.findViewById(R.id.btnquen);
         Button btnhuy = dialog.findViewById(R.id.btnhuy);
         TextView txtshow = dialog.findViewById(R.id.txtshow);
-         btnhuy.setOnClickListener(new View.OnClickListener() {
+        btnhuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.cancel();
@@ -191,7 +191,9 @@ public class MainActivity extends AppCompatActivity {
                         txtshow.setText("Your password is: " + password);
                     } else {
                         Toast.makeText(MainActivity.this, "Tên đăng nhập hoặc email không đúng!", Toast.LENGTH_SHORT).show();
+
                     }
+                    dialog.cancel();
                     cursor.close();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -202,6 +204,10 @@ public class MainActivity extends AppCompatActivity {
 
         dialog.show();
     }
-         }
+
+    public void dangkil(View view) {
+        txter.setText("vào được");
+    }
+}
 
 

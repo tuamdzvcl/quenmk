@@ -140,7 +140,7 @@
         android:id="@+id/txtTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="banghi"
+        android:text="Số danh sách sinh viên là "
         android:textAlignment="center"
         android:textSize="20dp" />
 

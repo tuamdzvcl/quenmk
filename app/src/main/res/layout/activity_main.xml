@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
     android:background="@drawable/anh"
+    android:orientation="vertical"
     app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity">
 
@@ -14,7 +14,7 @@
         android:id="@+id/txtdangngap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:text="Đăng Nhập "
         android:textAlignment="center"
         android:textColor="#673AB7"
@@ -39,13 +39,13 @@
             android:id="@+id/edttk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
+
             android:ems="10"
             android:inputType="text"
-
-            android:textSize="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:textSize="30dp" />
 
     </LinearLayout>
 
@@ -66,12 +66,12 @@
             android:id="@+id/edtmk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPassword"
-            android:textSize="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:textSize="30dp" />
 
     </LinearLayout>
 
@@ -103,10 +103,9 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:text="Đăng Nhập"
-            android:textSize="30dp"
             android:onClick="dangnhap"
-            />
+            android:text="Đăng Nhập"
+            android:textSize="30dp" />
 
 
     </LinearLayout>
@@ -123,23 +122,51 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
+            android:onClick="dangkil"
             android:text="Bạn chưa có tài khoản ?"
             android:textAlignment="textEnd"
             android:textColorLink="#4CAF50"
-            android:onClick="dangki"
             android:textSize="20dp" />
 
-        <Button
-            android:id="@+id/btndangki"
+        <TextView
+            android:id="@+id/txtdangki"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:text="Đăng kí"
-            android:textAlignment="textStart"
-            android:textColor="@color/white"
-            android:textSize="20dp"
+            android:onClick="dangKi"
+            android:text="Đăng Kí"
+            android:textColor="#03A9F4"
+            android:textSize="20dp" />
 
-            android:onClick="dangki"/>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:text="Lấy Lại Mật Khẩu"
+            android:textAlignment="textEnd"
+            android:textColor="#2196F3"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/txtquenmk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tại đây"
+            android:onClick="quenmk"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            />
+    </LinearLayout>
+
 </LinearLayout>
